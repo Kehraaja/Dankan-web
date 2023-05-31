@@ -63,7 +63,7 @@ strong {
 
 
 
-/* OBECNE VSUDE */
+/* GENERAL */
 
 body {
     font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
@@ -161,7 +161,7 @@ body > header > .container {
 
 
 
-/* DOMŮ */
+/* HOME */
 
 .home .container {
     padding-bottom: 20em;
@@ -192,25 +192,29 @@ body > header > .container {
 
 .home ul {
     align-items: center;
-    border-radius: 10px;
     display: flex;
     justify-content: space-around;
-    margin-top: 2em;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-.home ul li {
-    border-bottom: 3px solid #EF6534;
+.home .split li a {
     color: #00386B;
-    font-size: 2em;
+}
+
+.home .split li {
+    border-bottom: 7px solid #EF6534;
+    font-size: 2rem;
     font-weight: bold;
+    margin-top: 1.5rem;
     text-transform: uppercase;
 }
 
 
+
+
     
 
-/* O NAS */
+/* ABOUT US */
 
 article {
     padding-top: 1rem;  
@@ -227,7 +231,8 @@ article h2,
 article h3,
 article h4,
 article h5,
-article h6 {
+article h6,
+article .about_us li:first-child {
     color: #00386B;
     padding: 1rem 0;
 }
@@ -241,7 +246,15 @@ article h1 {
     width: max-content;
 }
 
-article h2 {
+article .about_us li {
+    line-height: 2em;
+    margin-bottom: 1rem;
+}
+
+
+
+article h2,
+article .about_us li:first-child {
     border-bottom: 2px dashed #EF6534;
     font-size: 1.2em;
     font-weight: bold;
@@ -252,43 +265,37 @@ article h2 {
     text-transform: uppercase;
 }
 
+article .about_us li:first-child {
+    margin: 0;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0;
+    width: 60%;
+}
+
 article ul {
     margin-bottom: 3em;
 }
 
-article section p {
-    line-height: 2em;
-    margin-bottom: 1.5em;
-}
 
 article section > div {
     margin-top: 1.5rem;
-    padding-bottom: 20rem;
+    padding-bottom: 15rem;
 }
 
 
 
 
 
-/* PARTNERI */
+/* PARTNERS */
+
 
 .container_partners h2 {
-    border: none;
-    display: block;
-    margin-bottom: .5rem; 
-    padding: 0;
     text-transform: uppercase;
+    border: none;
+    margin-bottom: 0;
 }
 
-.container_partners ul {
-    margin-bottom: 3rem;
-}
-
-.container_partners li {
-    margin-bottom: .8rem;
-}
-
-.container_partners li h3 { 
+.container_partners h3 { 
     color: #EF6534;
     font-weight: normal;
     padding: 0;
@@ -296,19 +303,27 @@ article section > div {
     text-transform: uppercase;
 }
 
-.container_partners p {
-    line-height: 1.5em;
-    margin: 0;
+.container_partners .split {
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+}
+
+.container_partners .split div {
+    margin-bottom: .7rem;
 }
 
 
-/* ODKAZY */
+
+/* LINKS */
 
 
-.container_links h3 {
+.container_links li:first-child,
+.container_partners li:first-child {
+    color: #00386B;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin: 0;
-    padding: 0;
-    padding-bottom: .5em;
+    padding-bottom: .8em;
     text-transform: uppercase;
 }
 
@@ -334,7 +349,7 @@ article section > div {
 
 
 
-/* KONTAKTY */
+/* CONTACTS */
 
 .kontakt section > div {
     padding-top: 1.5rem;
@@ -344,27 +359,28 @@ article section > div {
     color: black;
 }
 
-.container_persons {
+.container_person {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 1.5em;
 }
 
-.persons {
+.person {
     display: flex;
     margin-bottom: 3.5em;
     width: 49%;
 }
 
-.persons p:first-child {
+.person p:first-child {
     height: 120px;
     margin: 0;
     padding: 0;
     width: 120px;
 }
 
-.persons img {
+.person img {
+    background-color:#00376bb9;
     border-radius: 50%;
     height: 120px;
     object-fit: cover;
@@ -372,12 +388,12 @@ article section > div {
     width: 120px;
     }
 
-.persons_info {
+.person_info {
     margin-left: 1.5em;
     width: 100%;
  }
 
-.persons_info h3 {
+.person_info h3 {
     border-bottom: 2px solid #EF6534;
     display: inline-block;
     font-size: 1em;
@@ -388,20 +404,22 @@ article section > div {
     text-transform: uppercase;
 }
 
-.persons_info p {
+.person_info p {
     line-height: 1.3em;
     margin-bottom: .2em;
 }
 
-.persons_info a {
+.person_info a {
     color: #EF6534;
 }
 
-.persons_info a:hover {
+.person_info a:hover {
     color:#00386B;
 }
 
 .aside .contacts {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2em;
 }
 
@@ -532,7 +550,6 @@ prefooter .address a:hover {
     }
 }
 
-
 @media (max-width: 945px){
     .container_links h3 {
         height: 3em;
@@ -565,13 +582,13 @@ prefooter .address a:hover {
         margin-top: .3em;
     }
 
-    .persons {
+    .person {
         align-items: center;
         flex-direction: column;
         margin-bottom: 2.5em;
     }
 
-    .persons_info {
+    .person_info {
         margin: 0;
         margin-top: 1em;
         text-align: center;
@@ -591,7 +608,7 @@ prefooter .address a:hover {
 }
 
 @media (max-width:720px) {
-    .persons {
+    .person {
         width: 100%;
     }
 
@@ -695,6 +712,10 @@ prefooter .address a:hover {
     article section > div {
         padding-bottom: 25rem;
     }
+
+    article .about_us li {
+        line-height: 1.7em;
+    }
 }
 
 @media (max-width: 546px) {
@@ -758,8 +779,13 @@ prefooter .address a:hover {
         justify-content: space-between;
     }
 
-    .container_partners ul {
+    .container_partners .split {
         width: 48%;
+    }
+
+    .container_partners h2 {
+        border: none;
+        margin-bottom: 0;
     }
 
     .container_links {
@@ -774,7 +800,6 @@ prefooter .address a:hover {
     .container_links .middle {
         margin-left: 2em;
     }
-
 }
 
 
